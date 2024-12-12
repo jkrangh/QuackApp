@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QuackApp.MainPage">
+             xmlns:models="clr-namespace:QuackApp.Models"
+             x:Class="QuackApp.MainPage"
+             Title="{Binding Title}">
 
     <ScrollView>
         <VerticalStackLayout
@@ -10,8 +12,13 @@
             VerticalOptions="Center"
             >
             <Label HorizontalOptions="Center" Text="Get your duck" FontSize="Large"/>
-            <Button Text="JPG"/>
-            <Button Text="GIF"/>
+            <Button Text="JPG"
+                    Command="{Binding GetDuckCommand}"/>
+            <Button Text="GIF"/>            
+            <Image Aspect="AspectFill"
+                   Source="{Binding Duck.Url}"/>
+
+
         </VerticalStackLayout>
     </ScrollView>
 

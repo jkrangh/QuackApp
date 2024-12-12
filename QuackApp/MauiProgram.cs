@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using QuackApp.Services;
+using QuackApp.ViewModels;
 
 namespace QuackApp
 {
@@ -15,6 +17,9 @@ namespace QuackApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<DuckService>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

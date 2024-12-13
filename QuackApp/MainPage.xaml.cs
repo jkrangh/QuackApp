@@ -8,8 +8,7 @@ namespace QuackApp
         {
             InitializeComponent();
 
-            BindingContext = mainViewModel;
-            mainViewModel.Title = "Quack, quack!";
+            BindingContext = mainViewModel;            
         }
     }
 

@@ -17,7 +17,7 @@
                     Command="{Binding GetDuckJpgCommand}"/>
             <Button Text="GIF"
                     Command="{Binding GetDuckGifCommand}"/>
-            <Image Aspect="AspectFill"                  
+            <Image Aspect="AspectFit"                  
                    IsAnimationPlaying="True"
                    Source="{Binding VmDuck.Url}"/>                   
         </VerticalStackLayout>

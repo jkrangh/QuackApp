@@ -10,10 +10,11 @@ namespace QuackApp.ViewModels
         private readonly DuckService duckService;
 
         [ObservableProperty] 
-        Duck? vmDuck = new Duck();
+        private Duck vmDuck = new Duck();
 
         public MainViewModel(DuckService duckService)
         {
+            Title = "Quack, quack!";
             this.duckService = duckService;
         }
 

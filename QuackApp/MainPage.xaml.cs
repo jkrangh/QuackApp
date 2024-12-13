@@ -6,10 +6,10 @@ namespace QuackApp
     {
         public MainPage(MainViewModel mainViewModel)
         {
+            InitializeComponent();
 
             BindingContext = mainViewModel;
             mainViewModel.Title = "Quack, quack!";
-            InitializeComponent();
         }
     }
 

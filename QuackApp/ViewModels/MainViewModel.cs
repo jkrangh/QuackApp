@@ -10,7 +10,7 @@ namespace QuackApp.ViewModels
         private readonly DuckService duckService;
 
         [ObservableProperty] 
-        Duck duck = new Duck();
+        Duck? vmDuck = new Duck();
 
         public MainViewModel(DuckService duckService)
         {
@@ -18,9 +18,15 @@ namespace QuackApp.ViewModels
         }
 
         [RelayCommand]
-        async Task<Duck> GetDuckAsync()
+        async Task GetDuckJpgAsync()
         {
-            return await duckService.GetDuckAsync();
+            VmDuck = await duckService.GetDuckJpgAsync();
+        }
+
+        [RelayCommand]
+        async Task GetDuckGifAsync()
+        {
+            VmDuck = await duckService.GetDuckGifAsync();
         }
     }
 }

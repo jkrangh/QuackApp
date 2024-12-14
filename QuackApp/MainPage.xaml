@@ -7,7 +7,11 @@
              x:Class="QuackApp.MainPage"
              Title="{Binding Title}">
 
-    <ScrollView>
+    <Grid RowSpacing="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <VerticalStackLayout
             Padding="50,0"
             Spacing="25"
@@ -16,11 +20,12 @@
             <Button Text="JPG"
                     Command="{Binding GetDuckJpgCommand}"/>
             <Button Text="GIF"
-                    Command="{Binding GetDuckGifCommand}"/>
-            <Image Aspect="AspectFit"                  
-                   IsAnimationPlaying="True"
-                   Source="{Binding VmDuck.Url}"/>                   
+                    Command="{Binding GetDuckGifCommand}"/>                               
         </VerticalStackLayout>
-    </ScrollView>
+        <Image Grid.Row="1" 
+               Aspect="AspectFit"                  
+               IsAnimationPlaying="True"
+               Source="{Binding VmDuck.Url}"/>
+    </Grid>
 
 </ContentPage>

@@ -16,6 +16,10 @@
                         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=LightBlue, Dark=DarkRed}"/>
                         <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
                     </Style>
+                    <Style TargetType="Shell" x:Key="QuackShell">
+                        <Setter Property="BackgroundColor"  Value="{AppThemeBinding Light=LightBlue, Dark=DarkRed}"/>
+                        <Setter Property="TitleColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

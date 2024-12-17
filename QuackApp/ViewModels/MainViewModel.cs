@@ -19,15 +19,29 @@ namespace QuackApp.ViewModels
         }
 
         [RelayCommand]
-        async Task GetDuckJpgAsync()
+        async Task GetDuckJpgAsync(object sender)
         {
-            VmDuck = await duckService.GetDuckJpgAsync();
+            try
+            {
+                VmDuck = await duckService.GetDuckJpgAsync();
+            }
+            catch (Exception ex) 
+            {
+                await Shell.Current.DisplayAlert("Error", $"No ducks found: {ex.Message}", "OK");
+            }
         }
 
         [RelayCommand]
         async Task GetDuckGifAsync()
         {
-            VmDuck = await duckService.GetDuckGifAsync();
+            try
+            {
+                VmDuck = await duckService.GetDuckGifAsync();
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", $"No ducks found: {ex.Message}", "OK");
+            }
         }
     }
 }

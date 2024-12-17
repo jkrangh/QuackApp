@@ -8,6 +8,15 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary>
+                    <Style TargetType="Grid" x:Key="QuackGrid">
+                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=ForestGreen}"/>
+                    </Style>
+                    <Style TargetType="Button" x:Key="QuackButton">
+                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=LightBlue, Dark=DarkRed}"/>
+                        <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}"/>
+                    </Style>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

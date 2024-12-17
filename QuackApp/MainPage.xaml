@@ -7,20 +7,25 @@
              x:Class="QuackApp.MainPage"
              Title="{Binding Title}">
 
-    <ScrollView>
+    <Grid RowDefinitions="Auto, *"
+          RowSpacing="25"
+          Style="{StaticResource QuackGrid}">
         <VerticalStackLayout
             Padding="50,0"
             Spacing="25"
             VerticalOptions="Start">
             <Label HorizontalOptions="Center" Text="Get your duck" FontSize="Large"/>
             <Button Text="JPG"
-                    Command="{Binding GetDuckJpgCommand}"/>
+                    Command="{Binding GetDuckJpgCommand}"
+                    Style="{StaticResource QuackButton}"/>
             <Button Text="GIF"
-                    Command="{Binding GetDuckGifCommand}"/>
-            <Image Aspect="AspectFit"                  
-                   IsAnimationPlaying="True"
-                   Source="{Binding VmDuck.Url}"/>                   
+                    Command="{Binding GetDuckGifCommand}"
+                    Style="{StaticResource QuackButton}"/>                               
         </VerticalStackLayout>
-    </ScrollView>
+        <Image Grid.Row="1" 
+               Aspect="AspectFit"                  
+               IsAnimationPlaying="True"
+               Source="{Binding VmDuck.Url}"/>
+    </Grid>
 
 </ContentPage>

@@ -17,9 +17,11 @@ namespace QuackApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddTransient<MainPage>();
-            builder.Services.AddTransient<MainViewModel>();
-            builder.Services.AddTransient<DuckService>();
+            builder.Services.AddSingleton<MainPage>();
+            
+            builder.Services.AddSingleton<MainViewModel>();
+            
+            builder.Services.AddSingleton<DuckService>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
